@@ -9,8 +9,6 @@ public class ThreadNameTest {
     @Test
     public void threadLocalTest(){
         ThreadContext.set("MAIN");
-
-        String threadname = Thread.currentThread().getName();
         AtomicBoolean hasNamechanged = new AtomicBoolean(false);
         IntStream.range(0,10000000).boxed().parallel().forEach(n->{
             if(!"MAIN".equals(ThreadContext.get())){
