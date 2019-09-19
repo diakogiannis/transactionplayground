@@ -1,5 +1,5 @@
 # Transaction Playground
-To make a long story short, you cannot use transactions within a parallel stream. This is because each thread in the parallel stream has its own name thus it does participate in the transaction.
+To make a long story short, you should not use transactions within a parallel stream. This is because each thread in the parallel stream has its own name thus it does participate in the transaction.
 
 ## The project
 I created a services that loads cats in 4 different ways
